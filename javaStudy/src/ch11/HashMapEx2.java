@@ -1,0 +1,39 @@
+package ch11;
+
+import java.util.*;
+
+public class HashMapEx2 {
+	public static void main(String[] args) {
+		HashMap map = new HashMap();
+		map.put("a", 90);
+		map.put("a", 100);
+		map.put("b", 100);
+		map.put("c", 80);
+		map.put("d", 90);
+		
+		Set set = map.entrySet();
+		Iterator it = set.iterator();
+		
+		while(it.hasNext()) {
+			Map.Entry e = (Map.Entry)it.next();
+			System.out.println(e.getKey()+","+e.getValue());
+		}
+		
+		set = map.keySet();
+		System.out.println("명단: "+set);
+		
+		Collection val = map.values();
+		it = val.iterator();
+		
+		int total = 0;
+		while(it.hasNext()) {
+			Integer i = (Integer) it.next();
+			total += i.intValue();
+		}
+		
+		System.out.println("총점: "+total);
+		System.out.println("평균: "+(float)total/set.size());
+		System.out.println("최고점수: "+Collections.max(val));
+		System.out.println("최저점수: "+Collections.min(val));
+	}
+}
