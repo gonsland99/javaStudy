@@ -1,6 +1,6 @@
 package MustHave;
 
-public class StringBuilderEx {
+public class StringBuilderEx{
 	public static void main(String[] args) {
 		StringBuilder sb = new StringBuilder("동해물과");
 		
